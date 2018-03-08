@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Đổi tọa độ thành địa chỉ</title>
+
+
+</head>
+<body>
+	<div id="floating-panel">
+		<input id="lat" type="text" placeholder="vĩ độ"> <input
+			id="lng" type="text" placeholder="kinh độ">
+		<button id="submit" onclick="geocodeLatLng(lat.value,lng.value)"
+			value="Submit">ABC</button>
+	</div>
+
+	<p id="address">Địa chỉ</p>
+	<script>
+		function geocodeLatLng(a1, a2) {
+			var geocoder = new google.maps.Geocoder;
+			var latlng = {
+				lat : parseFloat(a1),
+				lng : parseFloat(a2)
+			};
+			geocoder.geocode(
+							{
+								'location' : latlng
+							},
+							function(results, status) {
+
+								if (status === 'OK') {
+									if (results[0]) {
+										document.getElementById("address").innerHTML = results[0].formatted_address;
+									} else {
+										window.alert('No results found');
+									}
+								} else {
+									window.alert('Geocoder failed due to: '
+											+ status);
+								}
+							});
+		};
+	</script>
+	<a href="Cau2.html"> Câu 2</a>
+
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8OC3A9XeaB0zcuofWai5TszkjFLHviSw&callback=initMap">
+		
+	</script>
+</body>
+</html>
