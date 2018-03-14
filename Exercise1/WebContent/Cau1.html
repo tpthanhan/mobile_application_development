@@ -7,14 +7,13 @@
 
 </head>
 <body>
-	<div id="floating-panel">
-		<input id="lat" type="text" placeholder="vĩ độ"> <input
-			id="lng" type="text" placeholder="kinh độ">
-		<button id="submit" onclick="geocodeLatLng(lat.value,lng.value)"
-			value="Submit">ABC</button>
+	<div>
+		<input id="lat" type="text" placeholder="vĩ độ"> 
+		<input id="lng" type="text" placeholder="kinh độ">
+		<button id="submit" onclick="geocodeLatLng(lat.value,lng.value)">Submit</button>
 	</div>
 
-	<p id="address">Địa chỉ</p>
+	Địa chỉ: <div id="address"><br></div>
 	<script>
 		function geocodeLatLng(a1, a2) {
 			var geocoder = new google.maps.Geocoder;
