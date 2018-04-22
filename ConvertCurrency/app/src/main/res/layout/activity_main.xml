@@ -5,34 +5,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
+
     tools:context="com.thanhan.myapplication.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-
+        android:orientation="vertical"
         android:layout_height="wrap_content">
         <Spinner
             android:id="@+id/spinner_1"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content">
 
         </Spinner>
 
-        <EditText
-            android:id="@+id/money_1"
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="24dp"
-            />
+            android:focusable="false">
+                <EditText
+                    android:id="@+id/money_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:backgroundTint="@android:color/transparent"
+                />
+        </HorizontalScrollView>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-
+        android:orientation="vertical"
         android:layout_height="wrap_content">
         <Spinner
             android:id="@+id/spinner_2"
@@ -40,20 +44,18 @@
             android:layout_height="wrap_content">
 
         </Spinner>
-
-        <TextView
-            android:id="@+id/money_2"
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24dp"
-            />
-
+            android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/money_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    />
+        </HorizontalScrollView>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/convert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Chuyển đổi"/>
+
 
 </LinearLayout>
